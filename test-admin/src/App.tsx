@@ -1,20 +1,14 @@
 import {
   Admin,
-  Resource,
-  ListGuesser,
-  EditGuesser,
-  ShowGuesser,
+  Resource, 
 } from "react-admin";
 import { Layout } from "./Layout";
 import { dataProvider } from "./dataProvider";
+import UserList from "./pages/users/users-list";
 
 export const App = () => (
   <Admin layout={Layout} dataProvider={dataProvider}>
     <Resource
-      name="npm"
-      list={ListGuesser}
-      edit={EditGuesser}
-      show={ShowGuesser}
-    />
+      name="users" list={UserList}/>
   </Admin>
 );
