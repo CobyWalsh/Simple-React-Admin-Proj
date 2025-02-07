@@ -3,20 +3,17 @@ import { Datagrid,
     FunctionField, 
     List, 
     ReferenceField, 
-    TextField, 
-    EmailField, 
+    TextField  
   } from 'react-admin';
 
 const PostList = () => (
     <List>
         <Datagrid>
             <TextField source="id" />
-            <TextField source="name" label="Name"/>
-            <EmailField source='email' label="Email" />
+            <TextField source="title" label="Post Title"/>
             <FunctionField label="Excerpt" 
-            render={(record) => `${record.name.substring(0, 50)}...`} 
+            render={(record) => record?.body ? `${record.body.substring(0, 50)}...`: ""} 
             />
-            <TextField source="username" />
             <ReferenceField source='userId' reference='users' />
         </Datagrid>
     </List>
