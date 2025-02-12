@@ -4,6 +4,7 @@ import {
 } from "react-admin";
 import { Layout } from "./Layout";
 import { dataProvider } from "./dataProvider";
+import Dashboard from "./pages/dashboard";
 import PostList from "./pages/posts/posts-list";
 import PostShow from "./pages/posts/post-show";
 import PostEdit from "./pages/posts/post-edit";
@@ -14,7 +15,7 @@ import UserEdit from "./pages/users/users-edit";
 import UserCreate from "./pages/users/users-create";
 
 export const App = () => (
-  <Admin layout={Layout} dataProvider={dataProvider}>
+  <Admin layout={Layout} dataProvider={dataProvider} dashboard={Dashboard}>
     <Resource name="posts" list={PostList} show={PostShow} edit={PostEdit} create={PostCreate}/>
     <Resource name="users" list={UserList} show={UserShow} edit={UserEdit} create={UserCreate}/>
   </Admin>
